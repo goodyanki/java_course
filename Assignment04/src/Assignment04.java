@@ -21,12 +21,33 @@ public class Assignment04
         double[] arrNumbersExercise2_test3 = {83.9, 93.4, 54.2, 46.6, 81.3, 30.2, 8.0, 28.9, 50.9, 29.4};
         standardDeviation(arrNumbersExercise2_test3);
 
+        //exercise 2 tester above
+
         int[][] testMatrix = {
                 {1, 2, 3},
                 {4, 5, 6},
                 {7, 8, 9}
         };
-        //largestSumColumns(testMatrix);
+        largestSumColumns(testMatrix);
+
+        int[][] testMatrix_test2 = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9},
+                {10, 11, 12}
+        };
+        largestSumColumns(testMatrix_test2);
+
+        int[][] testMatrix_test3 = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9},
+                {10, 11, 12},
+                {13, 14, 15}
+        };
+        largestSumColumns(testMatrix_test3);
+        //exercise 3 tester above
+
 
 
     }
@@ -84,7 +105,8 @@ public class Assignment04
         double mean = mean(arrNumbers);
         double[] deviations = new double[arrNumbers.length];
 
-        for (int i = 0; i < arrNumbers.length; i++) {
+        for (int i = 0; i < arrNumbers.length; i++) 
+        {
             deviations[i] = arrNumbers[i] - mean;
         }
 
@@ -127,12 +149,21 @@ public class Assignment04
             sumOfSquares += deviation * deviation;
         }
         double variance = sumOfSquares / (arrNumbers.length - 1);
-        System.out.println("\n" + Math.sqrt(variance));
+        System.out.println("The mean is: " + mean(arrNumbers));
+        System.out.println("\nThe standard deviation is : " + Math.sqrt(variance) + "\n");
         return Math.sqrt(variance);
     }
 
     public static int[] largestSumColumns(int[][] matrix)
     {
+        /*
+         * Pseudocode:
+         * 1. Create variable to store the index of the largest column, sum of the largest column, andthe largest column
+         * 2. Use the for loop to calculate the sum of each column, if the sum is larger than the largest column, update the largest column and the sum
+         * 3. Create a new array to store the largest column
+         * 4. Use the for loop to store the largest column into the new array
+         * 5. Print the new array
+         */
         int maxColumnIndex = 0;
         int sum = 0;
         int largestColumns = -2147483648;
