@@ -13,8 +13,7 @@ public class Assignment04
                 {4, 5, 6},
                 {7, 8, 9}
         };
-        int[] largestSumColumn = largestSumColumns(testMatrix);
-        System.out.print("Column with the largest sum: ");
+        largestSumColumns(testMatrix);
 
 
     }
