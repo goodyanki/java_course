@@ -203,7 +203,7 @@ public class Assignment04
         {
             System.out.print(array[i] + " ");
         }
-        System.out.println(); // 换行
+        System.out.println(); 
     }
 
 }
