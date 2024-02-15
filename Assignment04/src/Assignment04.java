@@ -2,18 +2,31 @@ public class Assignment04
 {
     public static void main(String[] args)
     {
-        //int[] arrNumbers = {1, 2, 3, 2, 1, 6, 3, 4, 5, 2};
-        //distinct(arrNumbers);
+        int[] arrNumbers = {1, 2, 3, 2, 1, 6, 3, 4, 5, 2};
+        distinct(arrNumbers);
+        int[] arrNumbers_test2 = {1, 2, 2, 2, 5, 7, 1, 3, 4, 4};    
+        distinct(arrNumbers_test2);
+        int[] arrNumbers_test3 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        distinct(arrNumbers_test3);
 
-        //double[] arrNumbersExercise2 = {1.9, 2.5, 3.7, 2, 1, 6, 3, 4, 5, 2};
-        //standardDeviation(arrNumbersExercise2);
+        //exercise 1 tester above
+
+
+        double[] arrNumbersExercise2 = {1.9, 2.5, 3.7, 2, 1, 6, 3, 4, 5, 2};
+        standardDeviation(arrNumbersExercise2);
+
+        double[] arrNumbersExercise2_test2 = {65.5, 67.7, 81.0, 26.3, 62.2, 36.0, 26.7, 26.2, 63.2, 71.7};
+        standardDeviation(arrNumbersExercise2_test2);
+
+        double[] arrNumbersExercise2_test3 = {83.9, 93.4, 54.2, 46.6, 81.3, 30.2, 8.0, 28.9, 50.9, 29.4};
+        standardDeviation(arrNumbersExercise2_test3);
 
         int[][] testMatrix = {
                 {1, 2, 3},
                 {4, 5, 6},
                 {7, 8, 9}
         };
-        largestSumColumns(testMatrix);
+        //largestSumColumns(testMatrix);
 
 
     }
@@ -52,6 +65,11 @@ public class Assignment04
         for (int i = 0; i < distinctCount; i++)
         {
             System.out.print(distinctArray[i] + " "  );
+            if (i == distinctCount - 1)
+            {
+                System.out.println("\n");
+            }
+
         }
     }
 
