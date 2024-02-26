@@ -20,7 +20,7 @@ public class Assignment05
         System.out.println(car.toString());
 
         Car car_1 = new Car("HONDA", "model2", 2020, 1500.0);
-        System.out.println(car.toString());
+        System.out.println(car_1.toString());
 
         //testers for the Point class
         Point point = new Point(1,2);
@@ -39,7 +39,7 @@ public class Assignment05
         System.out.println(rectangle.toString());
 
         Rectangle rectangle_1 = new Rectangle(30, 50, 20, 100);
-        System.out.println(rectangle.toString());
+        System.out.println(rectangle_1.toString());
   
     }
 

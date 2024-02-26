@@ -6,14 +6,18 @@
 public class Fan
 {
     /**
-     * Here are 3 constants for the speed of the fan.
+     * <p>
+     *     Here are 3 constants for the speed of the fan.
+     * </p>
      */
     public static final int SLOW = 1;
     public static final int MEDIUM = 2;
     public static final int FAST = 3;
     
     /**
-     * Here are 4 data fields for the Fan class.
+     * <p>
+     *     Here are 4 data fields for the Fan class.
+     * </p>
      */
     private int speed;
     private boolean on;
@@ -21,7 +25,9 @@ public class Fan
     private String color;
 
     /**
-     * Here are 2 constructors for the Fan class.
+     * <p>
+     *     Here are 2 constructors for the Fan class.
+     * </p>
      */
     public Fan() 
     {
@@ -30,9 +36,13 @@ public class Fan
         radius = 5;
         color = "blue";
     }
+
     /**
-     * @param speed, on, radius, color
-     * @return the data for each fan
+     * @param speed                      shows the speed of the fan
+     * @param on                         shows if the fan is on or off
+     * @param radius                     shows the radius of the fan
+     * @param color                      shows the color of the fan
+     * @return                           the data for each fan
      */
     public Fan(int speed, boolean on, double radius, String color) 
     {
@@ -43,7 +53,10 @@ public class Fan
     }
 
     /**
-     * @param no param, just setters and getters
+     * <p>
+     *     no params
+     *     This method is used to get the speed of the fan.
+     * </p>
      * @return the data for each fan
      */
     public int getSpeed()
@@ -88,7 +101,10 @@ public class Fan
 
 
     /**
-     * @param no param
+     * <p>
+     *     no params
+     *     This method is used to display the data for each fan.
+     * </p>
      * @return String of the fan's speed, color, and radius if the fan is on, otherwise return a string of the fan's color and radius and a message that the fan is off.
      */
     public String toString() 

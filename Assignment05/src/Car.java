@@ -6,7 +6,9 @@ public class Car
 {
 
     /**
-     * Here are 4 data fields for the Car class.
+     * <p>
+     *     Here are 4 data fields for the Car class.
+     * </p>
      */
     private String brand;
     private String model;
@@ -14,12 +16,14 @@ public class Car
     private double weight;
 
     /**
-     * Here is a constructor for the Car class.
-     * @param brand
-     * @param model
-     * @param year
-     * @param weight
-     * @return the data for each car
+     * <p>
+     *     Here is a constructor for the Car class.
+     * </p>
+     * @param brand                  shows the brand of the car；
+     * @param model                  shows the model of the car；
+     * @param year                   shows the year of the car；
+     * @param weight                 shows the weight of the car；
+     * @return                       constructor do not return anything
      */
     public Car(String brand, String model, int year, double weight)
     {
@@ -30,9 +34,11 @@ public class Car
 
     }
     /**
-     * @param no param, just getters
-     * @return
-     */
+     * <p>
+     *     just getters
+     * </p>
+     * @return the data for each car
+      */
     public String getBrand()
     {
         return brand;
@@ -54,7 +60,10 @@ public class Car
     }
 
     /**
-     * @param no param, just an output method for display all the params
+     *<p>
+     *     This method is used to get the data for each car.
+     *     no params
+     *</p>
      * @return the output
 
      */

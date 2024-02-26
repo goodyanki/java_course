@@ -15,14 +15,14 @@ public class Rectangle
 
     /**
      * Here is a constructor for the Rectangle class.
-     * @param x
-     * @param y
-     * @param width
-     * @param height
+     * @param x                     shows the x value of the rectangle；
+     * @param y                     shows the y value of the rectangle；
+     * @param width                 shows the width of the rectangle；
+     * @param height                shows the height of the rectangle；
      * call the arrangeCorners  method to arrange the corners
-     * @return the data for each rectangle
-     * 
+     * @return                      constructor do not return anything
      */
+
     public Rectangle(int x, int y, int width, int height) 
     {
         this.width = width;
@@ -34,8 +34,11 @@ public class Rectangle
     }
 
     /**
-     * @param no param, just a method to arrange the corners
-     * @return no return
+     * <p>
+     *     no params
+     *     This method is used to arrange the corners of the rectangle.
+     * </p>
+     * @return              do not return anything
      * 
      */
     public void arrangeCorners()
@@ -47,7 +50,9 @@ public class Rectangle
     }
 
     /**
-     * @param no param, just getters
+     * <p>
+     *     no params, just getters
+     * </p>
      * @return
      */
     public int getWidth()
@@ -76,7 +81,10 @@ public class Rectangle
     }
 
     /**
-     * @param no param, just an output method for display all the params
+     * <p>
+     *     no params
+     *     This method is used to get the data for each rectangle.
+     * </p>
      * @return the output
      */
     public String toString()

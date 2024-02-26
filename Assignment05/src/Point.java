@@ -21,9 +21,9 @@ public class Point
     }
 
     /**
-     * @param x
-     * @param y
-     * @return the data for each point
+     * @param x                     shows the x value of the point；
+     * @param y                     shows the y value of the point;
+     * @return                      the constructor do not return anything
      */
     public Point(int x, int y)
     {
@@ -32,8 +32,7 @@ public class Point
     }
 
     /**
-     * @param no param, just getters
-     * @return
+     * @return the data for each point
      */
     public int getX()
     {
@@ -47,9 +46,12 @@ public class Point
     }
 
     /**
-     * @param newX
-     * @param newY
-     * @return the new data for each point
+     *<p>
+     *     This method is used to move the point to a new location.
+     *</p>
+     * @param newX          shows the new x value of the point；
+     * @param newY          shows the new y value of the point;
+     * @return              the new data for each point
 
      */
     public void moveTo(int newX, int newY)
@@ -59,8 +61,11 @@ public class Point
     }
 
     /**
-     * @param no param, just an output method for display all the params
-     * @return the output
+     *<p>
+     *no params
+     *This method is used to display the data for each point.
+     * </p>
+     * @return              the output
      */
     public String toString()
     {
