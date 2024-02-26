@@ -30,7 +30,10 @@ public class Fan
         radius = 5;
         color = "blue";
     }
-
+    /**
+     * @param speed, on, radius, color
+     * @return the data for each fan
+     */
     public Fan(int speed, boolean on, double radius, String color) 
     {
         this.speed = speed;
