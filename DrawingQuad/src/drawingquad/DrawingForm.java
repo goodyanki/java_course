@@ -6,6 +6,7 @@
 package drawingquad;
 
 import java.awt.Graphics;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -184,8 +185,39 @@ public class DrawingForm extends javax.swing.JFrame {
         // Is it "Quadrilateral"?
         if(cmbText.equals("Quadrilateral"))
         {
-            // Complete here
+            Quadrilateral quad = new Quadrilateral();
+            quad.draw(g);
         }
+        else if(cmbText.equals("Rectangle"))
+        {
+            String widthText = txtWidth.getText();
+            String heightText = txtHeight.getText();
+            if (widthText.length() != 0 && heightText.length() != 0)
+            {
+		int width = Integer.parseInt(widthText);
+		int height = Integer.parseInt(heightText);
+		Rectangle rect = new Rectangle(width, height);
+		rect.draw(g);
+            }
+            else
+            {
+		JOptionPane.showMessageDialog(null, "Please enter width and height for the rectangle.");
+            }
+        }
+        else if(cmbText.equals("Square"))
+        {
+            String sideText = txtWidth.getText();
+            if (sideText.length() != 0)
+            {
+		int side = Integer.parseInt(sideText);
+		Square square = new Square(side);
+		square.draw(g);
+            }
+            else
+            {
+		JOptionPane.showMessageDialog(null, "Please enter the side length for the square.");
+            }
+    } 
         
         // Is it "Rectangle"?
         
