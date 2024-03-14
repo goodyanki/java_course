@@ -55,6 +55,14 @@ the values of x, y, width and height.
         this.height = height;
         center();
     }
+/**
+ * <p> 
+ * just getters fro width, height and area
+ * <p>
+ * 
+ * @return 
+ */
+    
     public int getWidth() 
     {
         return width;
@@ -70,6 +78,11 @@ the values of x, y, width and height.
         return height * width;
     }
     
+    /**
+     * compare to method which returns depends on the comparement result
+     * @param o
+     * @return 
+     */
     public int compareTo(Rectangle o)
     {
         if (getArea() < o.getArea())
@@ -86,12 +99,21 @@ the values of x, y, width and height.
         }
     }
     
-
+/**
+ * compare two rectangles width
+ * @param o
+ * @return 
+ */
     public int compareWidth(Rectangle o)
     {
         return getWidth() - o.getWidth();
     }
 
+    /**
+ * compare two rectangles heights
+     * @param o
+     * @return 
+     */
     public int compareHeight(Rectangle o) 
     {
         return getHeight() - o.getHeight();

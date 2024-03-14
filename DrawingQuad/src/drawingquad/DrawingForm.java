@@ -13,7 +13,8 @@ import javax.swing.JOptionPane;
  * @author Hani
  */
 public class DrawingForm extends javax.swing.JFrame {
-
+    
+    private ArrayRect arrayRect = new ArrayRect(); 
     /**
      * Creates new form DrawingForm
      */
@@ -261,17 +262,42 @@ public class DrawingForm extends javax.swing.JFrame {
 
     private void btnAddToArrayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddToArrayActionPerformed
         // TODO add your handling code here:
+            try 
+            {
+                int width = Integer.parseInt(txtWidth.getText());
+                int height = Integer.parseInt(txtHeight.getText());
+                Rectangle rectangle = new Rectangle(width, height);
+                if (!arrayRect.add(rectangle)) 
+                {
+                    JOptionPane.showMessageDialog(this, "Array is full.");
+                }
+            } 
+            catch (NumberFormatException e) 
+            {
+                JOptionPane.showMessageDialog(this, "Please enter valid numbers for width and height.");
+            }
     }//GEN-LAST:event_btnAddToArrayActionPerformed
 
     private void btnSortArrayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSortArrayActionPerformed
         // TODO add your handling code here:
+     
+        boolean descending = chkSortDescending.isSelected();
+        boolean sortByWidth = radioSortWidth.isSelected(); 
+
+        arrayRect.selectionSort(descending, sortByWidth); 
+        
+        btnDrawArrayActionPerformed(null); 
     }//GEN-LAST:event_btnSortArrayActionPerformed
 
     private void btnDrawArrayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDrawArrayActionPerformed
         // TODO add your handling code here:
+        Graphics g = getGraphics();
+        clear();
+        arrayRect.drawArray(g);
+
     }//GEN-LAST:event_btnDrawArrayActionPerformed
 
-    private void clear()
+    private void clear() 
     {
         // DON'T CHANGE THIS METHOD!
         // Call it before you draw any polygon so it erases the window
