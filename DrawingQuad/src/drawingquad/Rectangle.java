@@ -12,7 +12,7 @@ package drawingquad;
 * This class is used to represent a rectangle shape and can be drawn on a GUI
 component.
 */
-public class Rectangle extends Quadrilateral
+public class Rectangle extends Quadrilateral implements Comparable<Rectangle>
 {
 /**
 * The width and height of the rectangle.
@@ -28,7 +28,7 @@ the values of x, y, width and height.
 * @param x
 * @param y
 */
-    private void moveTo(int x, int y)
+    public void moveTo(int x, int y)
     {
         points[0] = new Point(x, y);
         points[1] = new Point(x + width, y);
@@ -55,4 +55,46 @@ the values of x, y, width and height.
         this.height = height;
         center();
     }
+    public int getWidth() 
+    {
+        return width;
+    }
+
+    public int getHeight() 
+    {
+        return height;
+    }
+
+    public int getArea()
+    {
+        return height * width;
+    }
+    
+    public int compareTo(Rectangle o)
+    {
+        if (getArea() < o.getArea())
+        {
+            return -1;
+        }
+        else if(getArea() > o.getArea() )
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+    
+
+    public int compareWidth(Rectangle o)
+    {
+        return getWidth() - o.getWidth();
+    }
+
+    public int compareHeight(Rectangle o) 
+    {
+        return getHeight() - o.getHeight();
+    }
+
 }
