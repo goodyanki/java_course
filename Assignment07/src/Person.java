@@ -1,4 +1,4 @@
-public class Person 
+public class Person implements Comparable<Person>
 {
     public static final char PERSON = 'P'; 
     public static final char EMPLOYEE = 'E';
