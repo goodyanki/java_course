@@ -8,7 +8,7 @@ public class Person implements Comparable<Person>
     private int ID;
     private String firstName;
     private String lastName;
-    private OrderBy sortOrder;
+    private OrderBy sortOrder;  
 
 
     public Person()
@@ -30,10 +30,35 @@ public class Person implements Comparable<Person>
         this.sortOrder = OrderBy.LAST_NAME;
     }
 
+
+    public char getPersonType() 
+    {
+        return personType;
+    }
+
+    public int getID() 
+    {
+        return ID;
+    }
+
+    public String getFirstName() 
+    {
+        return firstName;
+    }
+
+    public String getLastName() 
+    {
+        return lastName;
+    }
+
+    public void setOrderBy(OrderBy newOrder) {
+        this.sortOrder = newOrder;
+    }
+
     @Override
     public String toString()
     {
-        return "Person [ID=" + ID + ", firstName=" + firstName + ", lastName=" + lastName + "]";
+        return "Person [ID" + ID + ", firstName= " + firstName + ", lastName= " + lastName + "]";
     }
 
     /**
@@ -41,27 +66,31 @@ public class Person implements Comparable<Person>
      * equals() will compare if the current object and the parameter contain the same values. This is an override method
      */
     @Override
-    public int compareTo(Person o)
+    public boolean equals(Object o) 
     {
-        int result = 0;
-        switch(sortOrder)
-        {
-            case TYPE:
-                result = personType - o.personType;
-                break;
-            case ID:
-                result = ID - o.ID;
-                break;
-            case FIRST_NAME:
-                result = firstName.compareTo(o.firstName);
-                break;
-            case LAST_NAME:
-                result = lastName.compareTo(o.lastName);
-                break;
-            default:
-                result = 0;
-                break;
-        }
-        return result;
+        if (this == o) return true;
+        if (o == null || !(o instanceof Person)) return false;
+        Person person = (Person) o;
+        return personType == person.personType && ID == person.ID && firstName == person.firstName && lastName == person.lastName;
     }
+
+
+    @Override
+    public int compareTo(Person person) 
+    {
+        switch(this.sortOrder)
+        {            
+            case TYPE:
+                return personType - person.personType;
+            case ID:
+                return ID - person.ID;
+            case FIRST_NAME:
+                return firstName.compareTo(person.firstName);
+            case LAST_NAME:
+                return lastName.compareTo(person.lastName);
+            default:
+                throw new IllegalArgumentException("Unknown sort order");
+        }
+    }
+
 }
