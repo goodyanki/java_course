@@ -42,7 +42,7 @@ public class Fan
      * @param on                         shows if the fan is on or off
      * @param radius                     shows the radius of the fan
      * @param color                      shows the color of the fan
-     * @return                           the data for each fan
+     * @return the data for each fan
      */
     public Fan(int speed, boolean on, double radius, String color) 
     {

@@ -19,6 +19,7 @@ public class Rectangle extends Quadrilateral implements Comparable<Rectangle>
 */
     private int width;
     private int height;
+    boolean sortedByWidth;
 /**
 * <p>
 *a method that receives the x and y positions of the upper left corner of the
@@ -78,24 +79,24 @@ the values of x, y, width and height.
         return height * width;
     }
     
+    public void setSortedByWidth(boolean sort)
+    {
+        this.sortedByWidth = sort;
+    }
     /**
-     * compare to method which returns depends on the comparement result
+     * compare to method which returns depends on the comparison result
      * @param o
      * @return 
      */
     public int compareTo(Rectangle o)
     {
-        if (getArea() < o.getArea())
+        if (sortedByWidth == true)
         {
-            return -1;
-        }
-        else if(getArea() > o.getArea() )
-        {
-            return 1;
+            return compareWidth(o);
         }
         else
         {
-            return 0;
+            return compareHeight(o);
         }
     }
     
@@ -106,7 +107,18 @@ the values of x, y, width and height.
  */
     public int compareWidth(Rectangle o)
     {
-        return getWidth() - o.getWidth();
+        if (getWidth() < o.getWidth())
+        {
+            return 1;
+        }
+        else if(getWidth() > o.getWidth() )
+        {
+            return -1;
+        }
+        else
+        {
+            return 0;
+        }
     }
 
     /**
@@ -116,7 +128,19 @@ the values of x, y, width and height.
      */
     public int compareHeight(Rectangle o) 
     {
-        return getHeight() - o.getHeight();
+
+        if (getHeight() < o.getHeight())
+        {
+            return -1;
+        }
+        else if(getHeight() > o.getHeight() )
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
     }
 
 }

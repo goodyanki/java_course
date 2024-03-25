@@ -13,6 +13,8 @@ public class ArrayRect
     private Rectangle[] data;
     private int capacity;
     private int size;
+    private boolean sortByWidth;
+
     
     public ArrayRect(int capacity) 
     {
@@ -43,18 +45,14 @@ public class ArrayRect
     
     public Rectangle rectAt(int i) 
     {
-        if (i < 0 || i >= size) 
-        {
-            throw new IndexOutOfBoundsException("Index: " + i + ", Size: " + size);
-        }
         return data[i];
     }
     
 
     public void drawArray(Graphics g) 
     {
-        int startX = 60; 
-        int startY = 350; 
+        int startX = 300; 
+        int startY = 250; 
         int gap = 10; 
 
         for (int i = 0; i < size; i++) 
@@ -67,28 +65,35 @@ public class ArrayRect
         }
     }   
     
-    
-    public void selectionSort(boolean descending, boolean sortByWidth) 
+    public void setSortByWidth(boolean sortByWidth) 
     {
+       this.sortByWidth = sortByWidth;
+    }
+    
+     public void selectionSort(boolean descending) 
+     {
         for (int i = 0; i < size - 1; i++) 
         {
+            boolean comparisonResult;
             int indexToSwap = i;
             for (int j = i + 1; j < size; j++) 
             {
-                boolean comparisonResult;
-                if (sortByWidth) 
+                if (sortByWidth == true)
                 {
-                    comparisonResult = (data[j].getWidth() < data[indexToSwap].getWidth());
-                } 
-                else 
-                {
-                    comparisonResult = (data[j].getHeight() < data[indexToSwap].getHeight());
+                    comparisonResult = data[j].getWidth() < data[indexToSwap].getWidth();
                 }
-                if (descending) 
+                else
+                {
+                    comparisonResult = data[j].getHeight() < data[indexToSwap].getHeight();
+                }
+                int compare = data[j].compareTo(data[indexToSwap]);
+                
+                if (descending == true)
                 {
                     comparisonResult = !comparisonResult;
                 }
-                if (comparisonResult) 
+
+                if (comparisonResult == true)
                 {
                     indexToSwap = j;
                 }
@@ -101,5 +106,6 @@ public class ArrayRect
             }
         }
     }
-
+     
 }
+

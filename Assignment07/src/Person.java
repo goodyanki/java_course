@@ -1,15 +1,20 @@
-public class Person implements Comparable<Person>
+public abstract class Person implements Comparable<Person>
+//public class Person implements Comparable<Person>
 {
     public static final char PERSON = 'P'; 
     public static final char EMPLOYEE = 'E';
     public static final char STUDENT = 'S';
 
-    private char personType;
-    private int ID;
-    private String firstName;
-    private String lastName;
-    private OrderBy sortOrder;  
+    protected char personType;
+    protected int ID;
+    protected String firstName;
+    protected String lastName;
+    protected OrderBy sortOrder;  
 
+    public enum OrderBy 
+    {
+        TYPE, ID, FIRST_NAME, LAST_NAME, DEPARTMENT, MAJOR;
+    }
 
     public Person()
     {
@@ -61,10 +66,7 @@ public class Person implements Comparable<Person>
         return "Person [ID" + ID + ", firstName= " + firstName + ", lastName= " + lastName + "]";
     }
 
-    /**
-     * 
-     * equals() will compare if the current object and the parameter contain the same values. This is an override method
-     */
+
     @Override
     public boolean equals(Object o) 
     {
@@ -89,8 +91,11 @@ public class Person implements Comparable<Person>
             case LAST_NAME:
                 return lastName.compareTo(person.lastName);
             default:
-                throw new IllegalArgumentException("Unknown sort order");
+                return 0;
         }
     }
+
+    public abstract void setInfo(String info);
+
 
 }

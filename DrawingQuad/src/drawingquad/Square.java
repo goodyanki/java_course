@@ -19,6 +19,7 @@ equal
 */
     public Square(int side)
     {
-        super(side, side);
+            super(side, side);
     }
+
 }

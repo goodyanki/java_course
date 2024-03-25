@@ -218,7 +218,7 @@ public class DrawingForm extends javax.swing.JFrame {
             {
 		JOptionPane.showMessageDialog(null, "Please enter the side length for the square.");
             }
-    } 
+        } 
         
         // Is it "Rectangle"?
         
@@ -262,20 +262,27 @@ public class DrawingForm extends javax.swing.JFrame {
 
     private void btnAddToArrayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddToArrayActionPerformed
         // TODO add your handling code here:
-            try 
+
+            int width = Integer.parseInt(txtWidth.getText());
+            int height = Integer.parseInt(txtHeight.getText());
+            
+            boolean isSquareSelected = cmbQuad.getSelectedItem().equals("Square");
+        
+            Rectangle rectangle;
+            if (isSquareSelected == true) 
             {
-                int width = Integer.parseInt(txtWidth.getText());
-                int height = Integer.parseInt(txtHeight.getText());
-                Rectangle rectangle = new Rectangle(width, height);
-                if (!arrayRect.add(rectangle)) 
-                {
-                    JOptionPane.showMessageDialog(this, "Array is full.");
-                }
-            } 
-            catch (NumberFormatException e) 
-            {
-                JOptionPane.showMessageDialog(this, "Please enter valid numbers for width and height.");
+                rectangle = new Square(width);
             }
+            else 
+            {
+                rectangle = new Rectangle(width, height);
+            }
+
+            if (arrayRect.add(rectangle) == false) 
+            {
+                JOptionPane.showMessageDialog(this, "Array is full.");
+            }
+
     }//GEN-LAST:event_btnAddToArrayActionPerformed
 
     private void btnSortArrayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSortArrayActionPerformed
@@ -283,8 +290,9 @@ public class DrawingForm extends javax.swing.JFrame {
      
         boolean descending = chkSortDescending.isSelected();
         boolean sortByWidth = radioSortWidth.isSelected(); 
+        arrayRect.setSortByWidth(sortByWidth);
 
-        arrayRect.selectionSort(descending, sortByWidth); 
+        arrayRect.selectionSort(descending); 
         
         btnDrawArrayActionPerformed(null); 
     }//GEN-LAST:event_btnSortArrayActionPerformed
