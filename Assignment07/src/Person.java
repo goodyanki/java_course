@@ -63,7 +63,7 @@ public abstract class Person implements Comparable<Person>
     @Override
     public String toString()
     {
-        return "Person [ID" + ID + ", firstName= " + firstName + ", lastName= " + lastName + "]";
+        return personType + "\t" + ID + "\t" + firstName + "\t" + lastName;
     }
 
 
